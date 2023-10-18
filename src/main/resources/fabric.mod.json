@@ -1,0 +1,47 @@
+{
+	"schemaVersion": 1,
+	"id": "twd-sasf",
+	"version": "${version}",
+	"name": "ServerAddressSpaceFix",
+	"description": "服务器地址首尾空格修复",
+	"authors": [
+		"TheWhiteDog9487"
+	],
+	"contact": {
+		"homepage": "https://www.thewhitedog9487.xyz/",
+		"sources": "https://github.com/TheWhiteDog9487/ServerAddressSpaceFix",
+		"issues": "https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/issues"
+	},
+	"license": "WTFPL",
+	"icon": "assets/twd-sasf/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"xyz.thewhitedog9487.ServerAddressSpaceFix"
+		],
+		"client": [
+			"xyz.thewhitedog9487.ServerAddressSpaceFixClient"
+		]
+	},
+	"mixins": [
+		"twd-sasf.mixins.json",
+		{
+			"config": "twd-sasf.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.23",
+		"minecraft": "~1.20.1",
+		"java": ">=17"
+	},
+	"suggests": {
+		"another-mod": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"twd-sasf.bilibili": "https://space.bilibili.com/401746666",
+				"twd-sasf.blog": "www.thewhitedog9487.xyz"},
+			"update_checker": true}}
+}

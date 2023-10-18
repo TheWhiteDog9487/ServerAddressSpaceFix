@@ -1,0 +1,6 @@
+{
+  "modmenu.nameTranslation.twd-sasf": "ServerAddressSpaceFix",
+  "modmenu.descriptionTranslation.twd-sasf": "Fixed the \"unknown host\" bug caused by the server address containing spaces at the beginning and end of the server address when adding a server or connecting directly",
+  "twd-sasf.bilibili": "Bilibili",
+  "twd-sasf.blog": "Blog"
+}

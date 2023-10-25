@@ -16,9 +16,6 @@
 	"icon": "assets/twd-sasf/icon.png",
 	"environment": "client",
 	"entrypoints": {
-		"main": [
-			"xyz.thewhitedog9487.ServerAddressSpaceFix"
-		],
 		"client": [
 			"xyz.thewhitedog9487.ServerAddressSpaceFixClient"
 		]

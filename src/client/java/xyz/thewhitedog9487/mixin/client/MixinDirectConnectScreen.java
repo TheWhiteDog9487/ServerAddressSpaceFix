@@ -9,8 +9,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinDirectConnectScreen {
     @Redirect(method = "saveAndClose", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/widget/TextFieldWidget;getText()Ljava/lang/String;"))
     private String trimGetText(TextFieldWidget instance) {
-        String trimmedText = instance.getText().trim();
+        String trimmedText = instance.getText().replace(" ", "");
         ((DirectConnectScreenAccessor) this).Mixin_GetAddressField().setText(trimmedText);
-        return trimmedText;
-    }
-}
+        return trimmedText;}}

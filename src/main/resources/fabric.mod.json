@@ -16,9 +16,8 @@
 	"icon": "assets/twd-sasf/icon.png",
 	"environment": "client",
 	"entrypoints": {
-		"client": [
-			"xyz.thewhitedog9487.ServerAddressSpaceFixClient"
-		]
+		"client": [ "xyz.thewhitedog9487.ServerAddressSpaceFixClient" ],
+		"modmenu": [ "xyz.thewhitedog9487.ModMenu" ]
 	},
 	"mixins": [
 		"twd-sasf.mixins.json",
@@ -28,7 +27,7 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.14.23",
+		"fabricloader": ">=0.15.3",
 		"minecraft": ["1.20","1.20.*"],
 		"java": ">=17"
 	},

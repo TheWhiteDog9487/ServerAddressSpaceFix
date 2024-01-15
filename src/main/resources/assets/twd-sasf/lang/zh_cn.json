@@ -1,6 +1,10 @@
 {
   "modmenu.nameTranslation.twd-sasf": "服务器地址首尾空格修复",
-  "modmenu.descriptionTranslation.twd-sasf": "修复添加服务器或直接连接时，服务器地址首尾包含空格导致的“未知的主机”Bug",
+  "modmenu.descriptionTranslation.twd-sasf": "修复添加服务器或直接连接时，服务器地址首尾包含空格导致的“未知的主机”Bug\n提示：如果需要使用配置菜单，请安装YetAnotherConfigLib模组",
   "twd-sasf.bilibili": "哔哩哔哩主页",
-  "twd-sasf.blog": "TheWhiteDog9487的博客"
+  "twd-sasf.blog": "TheWhiteDog9487的博客",
+  "title.thewhitedog9487.twd-sasf.config": "服务器地址首尾空格修复",
+  "config.thewhitedog9487.twd-sasf.category.general": "通用",
+  "option.thewhitedog9487.twd-sasf.ModEnabled": "是否启用模组功能",
+  "option.thewhitedog9487.twd-sasf.ModEnabled.description": "无需重启游戏，修改并保存后立刻生效"
 }

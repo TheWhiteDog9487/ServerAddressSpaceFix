@@ -1,6 +1,10 @@
 {
   "modmenu.nameTranslation.twd-sasf": "ServerAddressSpaceFix",
-  "modmenu.descriptionTranslation.twd-sasf": "Fixed the \"unknown host\" bug caused by the server address containing spaces at the beginning and end of the server address when adding a server or connecting directly",
+  "modmenu.descriptionTranslation.twd-sasf": "Fixed the \"unknown host\" bug caused by the server address containing spaces at the beginning and end of the server address when adding a server or connecting directly\nTip: If you need to use the configuration menu, install the YetAnotherConfigLib mod",
   "twd-sasf.bilibili": "Bilibili",
-  "twd-sasf.blog": "Blog"
+  "twd-sasf.blog": "Blog",
+  "title.thewhitedog9487.twd-sasf.config": "ServerAddressSpaceFix",
+  "config.thewhitedog9487.twd-sasf.category.general": "General",
+  "option.thewhitedog9487.twd-sasf.ModEnabled": "Whether To Enable The Mod Feature",
+  "option.thewhitedog9487.twd-sasf.ModEnabled.description": "There is no need to restart the game, and the modification will take effect immediately after it is saved"
 }

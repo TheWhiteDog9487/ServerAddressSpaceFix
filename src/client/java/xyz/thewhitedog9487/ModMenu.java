@@ -13,13 +13,13 @@ public class ModMenu implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> YetAnotherConfigLib.createBuilder()
-                .title(Text.translatable("title.thewhitedog9487.twd-sasf.config"))
+                .title(Text.translatable("title.twd-sasf.config"))
                 .category(ConfigCategory.createBuilder()
-                        .name(Text.translatable("config.thewhitedog9487.twd-sasf.category.general"))
+                        .name(Text.translatable("config.twd-sasf.category.general"))
                         .option(Option.<Boolean>createBuilder()
-                                .name(Text.translatable("option.thewhitedog9487.twd-sasf.ModEnabled"))
+                                .name(Text.translatable("option.twd-sasf.ModEnabled"))
                                 .binding(true, () -> Settings.ModEnabled, newVal -> Settings.ModEnabled = newVal)
-                                .description(OptionDescription.of(Text.translatable("option.thewhitedog9487.twd-sasf.ModEnabled.description")))
+                                .description(OptionDescription.of(Text.translatable("option.twd-sasf.ModEnabled.description")))
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
                         .build())

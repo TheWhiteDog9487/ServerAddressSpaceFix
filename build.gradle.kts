@@ -70,6 +70,14 @@ tasks.jar {
     }
 }
 
+tasks.remapJar{
+    // https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archiveFileName
+    // 用这个属性设置jar包的文件名格式
+    // 别用上面那个Jar任务的配置，会被remapJar覆盖掉
+    archiveFileName = "${project.base.archivesName.get()}-${project.version} mc${project.extra["compatible_with"]}.jar"}
+tasks.remapSourcesJar{
+    archiveFileName = "${project.base.archivesName.get()}-${project.version} mc${project.extra["compatible_with"]}-sources.jar"}
+
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {

@@ -6,23 +6,27 @@
 如果你在“添加服务器”或者“直接连接”界面输入的服务器地址首尾或者中间包含空格，这个模组会自动帮你把它去掉。  
 以防止上面提到的“未知的主机”Bug的出现。  
 
-# 为什么会有这个模组
-前几个月吧，我想玩一个服务器。从那个服务器的官网把地址复制下来，粘贴到“服务器地址”中保存之后，居然出现了“未知的主机”。  
-莫慌，这显然是DNS没查找到对应的地址，先Ping一下。  
-Ping能找到域名对应的地址，然后我又怀疑是长城又在搞什么，用站长之家的工具测了一下，所有的结果和我的都是一样的啊。  
-这就比较奇怪了。  
-然后在折腾了一段时间之后，我发现了问题。  
-**我复制到的服务器地址的末尾，有一个空格。**  
-这就很难绷了啊，再继续折腾了一段时间，确认问题能够稳定复现之后，我去漏洞追踪器提交了一个Bug。  
-结果您猜怎么着？  
-![漏洞追踪器上提的问题](https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/%E5%9B%BE%E7%89%87/Snipaste_2023-10-18_15-22-39.png?raw=true)  
-![下面的评论](https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/%E5%9B%BE%E7%89%87/Snipaste_2023-10-18_15-22-47.png?raw=true)  
-![更早的一个问题报告](https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/%E5%9B%BE%E7%89%87/Snipaste_2023-10-18_15-22-57.png?raw=true)  
-我英语完全不行，就没继续说下去了，问题描述都是用翻译写的。  
-但是吧，我打心里觉得这事多少有点离谱。  
-既然你的地址是String类，那在后面调用一下trim方法很难吗？  
-而且，我作为一个玩家，你跟我说，“这都是你自己不小心，这根本就不能算是个Bug“，我是不能接受的。  
-**所以，有了这个模组。**
+<details>
+    <summary>为什么会有这个模组</summary>
+    <pre>
+        前几个月吧，我想玩一个服务器。从那个服务器的官网把地址复制下来，粘贴到“服务器地址”中保存之后，居然出现了“未知的主机”。
+        莫慌，这显然是DNS没查找到对应的地址，先Ping一下。
+        Ping能找到域名对应的地址，然后我又怀疑是长城又在搞什么，用站长之家的工具测了一下，所有的结果和我的都是一样的啊。
+        这就比较奇怪了。
+        然后在折腾了一段时间之后，我发现了问题。
+        <strong>我复制到的服务器地址的末尾，有一个空格。</strong>
+        这就很难绷了啊，再继续折腾了一段时间，确认问题能够稳定复现之后，我去漏洞追踪器提交了一个Bug。
+        结果您猜怎么着？ 
+        <img src="https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/%E5%9B%BE%E7%89%87/Snipaste_2023-10-18_15-22-39.png?raw=true" alt="漏洞追踪器上提的问题" srcset="">
+        <img src="https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/%E5%9B%BE%E7%89%87/Snipaste_2023-10-18_15-22-47.png?raw=true" alt="下面的评论" srcset="">
+        <img src="https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/%E5%9B%BE%E7%89%87/Snipaste_2023-10-18_15-22-57.png?raw=true" alt="更早的一个问题报" srcset="">
+        我英语完全不行，就没继续说下去了，问题描述都是用翻译写的。
+        但是吧，我打心里觉得这事多少有点离谱。
+        既然你的地址是String类，那在后面调用一下trim方法很难吗？
+        而且，我作为一个玩家，你跟我说，“这都是你自己不小心，这根本就不能算是个Bug“，我是不能接受的。
+        <strong>所以，有了这个模组。</strong>
+    </pre>
+</details>
 
 # 已知问题
 所有已知问题均被修复，如果有新的欢迎通知我。  

@@ -1,14 +1,16 @@
 {
   "required": true,
   "package": "xyz.thewhitedog9487.mixin.client",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_25",
   "client": [
-    "DirectConnectScreenAccessor",
-    "MixinAddServerScreen",
-    "MixinDirectConnectScreen",
-    "MixinServerInfo"
+    "ServerDataMixin",
+    "JoinMultiplayerScreenMixin",
+    "ManageServerScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  },
+  "mixins": [
+
+  ]
 }

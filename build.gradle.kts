@@ -1,5 +1,5 @@
 plugins {
-    id("fabric-loom") version "1.8-SNAPSHOT"
+    id("net.fabricmc.fabric-loom") version "1.15-SNAPSHOT"
     id("maven-publish")
 }
 
@@ -13,11 +13,13 @@ base {
 repositories {
     maven {
         name = "Xander Maven"
-        url = uri("https://maven.isxander.dev/releases")}
+        url = uri("https://maven.isxander.dev/releases") }
     maven {
         name = "Terraformers"
-        url = uri("https://maven.terraformersmc.com/releases")}
-}
+        url = uri("https://maven.terraformersmc.com/releases") }
+    maven {
+        name = "Nucleoid"
+        url = uri("https://maven.nucleoid.xyz/") } }
 
 loom {
     splitEnvironmentSourceSets()
@@ -28,23 +30,24 @@ loom {
             sourceSet(sourceSets["client"])
         }
     }
+
+    accessWidenerPath = file("src/main/resources/twd-sasf.classtweaker")
 }
 
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft("com.mojang:minecraft:${project.extra["minecraft_version"]}")
-    mappings("net.fabricmc:yarn:${project.extra["yarn_mappings"]}:v2")
-    modImplementation("net.fabricmc:fabric-loader:${project.extra["loader_version"]}")
+    implementation("net.fabricmc:fabric-loader:${project.extra["loader_version"]}")
 
     // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation("net.fabricmc.fabric-api:fabric-api:${project.extra["fabric_version"]}")
+    implementation("net.fabricmc.fabric-api:fabric-api:${project.extra["fabric_api_version"]}")
 
     // Uncomment the following line to enable the deprecated Fabric API modules. 
     // These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
     // "modImplementation"("net.fabricmc.fabric-api:fabric-api-deprecated:${project.extra["fabric_version"]}")
 
-    modImplementation("com.terraformersmc:modmenu:${project.extra["modmenu_version"]}")
-    modImplementation("dev.isxander:yet-another-config-lib:${project.extra["yacl_version"]}")
+    implementation("com.terraformersmc:modmenu:${project.extra["modmenu_version"]}")
+    implementation("dev.isxander:yet-another-config-lib:${project.extra["yacl_version"]}")
 }
 
 tasks.processResources {
@@ -55,27 +58,23 @@ tasks.processResources {
 }
 
 tasks.withType<JavaCompile> {
-    options.release.set(21)
+    options.release.set(25)
 }
 
 java {
     withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 }
 
 tasks.jar {
     from("LICENSE") {
-        rename { "${it}_${project.base.archivesName.get()}" }
-    }
-}
+        rename { "${it}_${project.base.archivesName.get()}" } }
 
-tasks.remapJar{
     // https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archiveFileName
-    // 用这个属性设置jar包的文件名格式
-    // 别用上面那个Jar任务的配置，会被remapJar覆盖掉
     archiveFileName = "${project.base.archivesName.get()}-${project.version} mc${project.extra["compatible_with"]}.jar"}
-tasks.remapSourcesJar{
+
+tasks.named<Jar>("sourcesJar") {
     archiveFileName = "${project.base.archivesName.get()}-${project.version} mc${project.extra["compatible_with"]}-sources.jar"}
 
 publishing {

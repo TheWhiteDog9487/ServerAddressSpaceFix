@@ -13,13 +13,13 @@ public class ModMenu implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> YetAnotherConfigLib.createBuilder()
-                .title(Component.translatable("title.twd-sasf.config"))
+                .title(Component.translatable("title.serveraddressspacefix.config"))
                 .category(ConfigCategory.createBuilder()
-                        .name(Component.translatable("config.twd-sasf.category.general"))
+                        .name(Component.translatable("config.serveraddressspacefix.category.general"))
                         .option(Option.<Boolean>createBuilder()
-                                .name(Component.translatable("option.twd-sasf.ModEnabled"))
+                                .name(Component.translatable("option.serveraddressspacefix.ModEnabled"))
                                 .binding(true, () -> Settings.ModEnabled, newVal -> Settings.ModEnabled = newVal)
-                                .description(OptionDescription.of(Component.translatable("option.twd-sasf.ModEnabled.description")))
+                                .description(OptionDescription.of(Component.translatable("option.serveraddressspacefix.ModEnabled.description")))
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
                         .build())

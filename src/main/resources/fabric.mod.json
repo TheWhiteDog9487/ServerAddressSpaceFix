@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "twd-sasf",
+	"id": "serveraddressspacefix",
 	"version": "${version}",
 	"name": "ServerAddressSpaceFix",
 	"description": "服务器地址首尾空格修复",
@@ -13,16 +13,16 @@
 		"issues": "https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/issues"
 	},
 	"license": "WTFPL",
-	"icon": "assets/twd-sasf/icon.png",
+	"icon": "assets/serveraddressspacefix/icon.png",
 	"environment": "client",
 	"entrypoints": {
 		"client": [ "xyz.thewhitedog9487.ServerAddressSpaceFixClient" ],
 		"modmenu": [ "xyz.thewhitedog9487.ModMenu" ]
 	},
 	"mixins": [
-		"twd-sasf.mixins.json",
+		"serveraddressspacefix.mixins.json",
 		{
-			"config": "twd-sasf.client.mixins.json",
+			"config": "serveraddressspacefix.client.mixins.json",
 			"environment": "client"
 		}
 	],
@@ -38,11 +38,11 @@
 	"custom": {
 		"modmenu": {
 			"links": {
-				"twd-sasf.bilibili": "https://space.bilibili.com/401746666",
-				"twd-sasf.blog": "www.thewhitedog9487.xyz"},
+				"serveraddressspacefix.bilibili": "https://space.bilibili.com/401746666",
+				"serveraddressspacefix.blog": "www.thewhitedog9487.xyz"},
 			"update_checker": true}},
 	"contributors": [
 		"JustAlittleWolf"
 	],
-	"accessWidener": "twd-sasf.classtweaker"
+	"accessWidener": "serveraddressspacefix.classtweaker"
 }

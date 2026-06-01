@@ -1,0 +1,10 @@
+{
+  "modmenu.nameTranslation.serveraddressspacefix": "ServerAddressSpaceFix",
+  "modmenu.descriptionTranslation.serveraddressspacefix": "Fixed the \"unknown host\" bug caused by the server address containing spaces at the beginning and end of the server address when adding a server or connecting directly\nTip: If you need to use the configuration menu, install the YetAnotherConfigLib mod",
+  "serveraddressspacefix.bilibili": "Bilibili",
+  "serveraddressspacefix.blog": "Blog",
+  "title.serveraddressspacefix.config": "ServerAddressSpaceFix",
+  "config.serveraddressspacefix.category.general": "General",
+  "option.serveraddressspacefix.ModEnabled": "Whether To Enable The Mod Feature",
+  "option.serveraddressspacefix.ModEnabled.description": "There is no need to restart the game, and the modification will take effect immediately after it is saved"
+}

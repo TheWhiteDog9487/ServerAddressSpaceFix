@@ -4,8 +4,9 @@ import net.fabricmc.api.ClientModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static xyz.thewhitedog9487.ServerAddressSpaceFix.ModID;
+
 public class ServerAddressSpaceFixClient implements ClientModInitializer {
-	public static final String ModID = "twd-sasf";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ModID);
 
 	@Override

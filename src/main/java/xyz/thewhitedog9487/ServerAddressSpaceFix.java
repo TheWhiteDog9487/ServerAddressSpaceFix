@@ -5,12 +5,12 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Deprecated
 public class ServerAddressSpaceFix implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
-    public static final Logger LOGGER = LoggerFactory.getLogger("twd-sasf");
+	public static final String ModID = "serveraddressspacefix";
+    public static final Logger LOGGER = LoggerFactory.getLogger(ModID);
 
 	@Override
 	public void onInitialize() {

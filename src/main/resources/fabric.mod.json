@@ -28,6 +28,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.18.4",
+		"fabric-api": ">=0.144.0",
 		"minecraft": "26.*",
 		"java": ">=25"
 	},
@@ -39,8 +40,8 @@
 		"modmenu": {
 			"links": {
 				"serveraddressspacefix.bilibili": "https://space.bilibili.com/401746666",
-				"serveraddressspacefix.blog": "www.thewhitedog9487.xyz"},
-			"update_checker": true}},
+				"serveraddressspacefix.blog": "https://www.thewhitedog9487.xyz"},
+			"update_checker": true } },
 	"contributors": [
 		"JustAlittleWolf"
 	],

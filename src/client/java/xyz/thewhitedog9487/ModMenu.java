@@ -9,6 +9,8 @@ import dev.isxander.yacl3.api.YetAnotherConfigLib;
 import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder;
 import net.minecraft.network.chat.Component;
 
+import static xyz.thewhitedog9487.Settings.SettingsInstance;
+
 public class ModMenu implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
@@ -18,10 +20,12 @@ public class ModMenu implements ModMenuApi {
                         .name(Component.translatable("config.serveraddressspacefix.category.general"))
                         .option(Option.<Boolean>createBuilder()
                                 .name(Component.translatable("option.serveraddressspacefix.ModEnabled"))
-                                .binding(true, () -> Settings.ModEnabled, newVal -> Settings.ModEnabled = newVal)
+                                .binding(true, () -> SettingsInstance.ModEnabled, newVal -> {
+                                    SettingsInstance.ModEnabled = newVal;
+                                    Settings.SettingsHandler.save(); } )
                                 .description(OptionDescription.of(Component.translatable("option.serveraddressspacefix.ModEnabled.description")))
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
                         .build())
-                .build().generateScreen(parent);}
-}
+                .build()
+                .generateScreen(parent); } }

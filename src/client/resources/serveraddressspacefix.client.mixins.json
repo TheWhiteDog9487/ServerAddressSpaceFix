@@ -3,14 +3,13 @@
   "package": "xyz.thewhitedog9487.mixin.client",
   "compatibilityLevel": "JAVA_25",
   "client": [
-    "ServerDataMixin",
-    "JoinMultiplayerScreenMixin",
-    "ManageServerScreenMixin"
+    "DirectJoinServerScreenMixin",
+    "ManageServerScreenMixin",
+    "ServerDataMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "mixins": [
-
   ]
 }

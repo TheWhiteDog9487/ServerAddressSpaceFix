@@ -37,7 +37,6 @@ loom {
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft("com.mojang:minecraft:${providers.gradleProperty("minecraft_version").get()}")
-
     implementation("net.fabricmc:fabric-loader:${providers.gradleProperty("loader_version").get()}")
 
     // Fabric API. This is technically optional, but you probably want it anyway.
@@ -77,11 +76,11 @@ tasks.jar {
     from("LICENSE") {
         rename { "${it}_$projectName" }
     }
-    archiveFileName = "ServerAddressSpaceFix-${project.version} mc${providers.gradleProperty("compatible_with").get()}.jar"
+    archiveFileName = "${providers.gradleProperty("archives_base_name").get()}-${project.version} mc${providers.gradleProperty("compatible_with").get()}.jar"
 }
 
 tasks.named<Jar>("sourcesJar") {
-    archiveFileName = "ServerAddressSpaceFix-${project.version} mc${providers.gradleProperty("compatible_with").get()}-sources.jar"}
+    archiveFileName = "${providers.gradleProperty("archives_base_name").get()}-${project.version} mc${providers.gradleProperty("compatible_with").get()}-sources.jar"}
 
 
 // configure the maven publication

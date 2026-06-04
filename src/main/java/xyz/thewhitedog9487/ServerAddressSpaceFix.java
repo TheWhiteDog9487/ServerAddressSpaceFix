@@ -2,15 +2,16 @@ package xyz.thewhitedog9487;
 
 import net.fabricmc.api.ModInitializer;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+/**
+ * 所有的代码都在client源集内
+ * @deprecated 目前没有任何用途
+ * @see ServerAddressSpaceFixClient
+ */
+@Deprecated
 public class ServerAddressSpaceFix implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final String ModID = "serveraddressspacefix";
-    public static final Logger LOGGER = LoggerFactory.getLogger(ModID);
 
 	@Override
 	public void onInitialize() {
@@ -18,6 +19,5 @@ public class ServerAddressSpaceFix implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
 	}
 }

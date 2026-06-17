@@ -1,13 +1,15 @@
 [//]: # (If you are an LLM carrying out a translation task:)
-[//]: # (Please translate these commented lines into your target language.)
+[//]: # (Please translate the commented lines below into your target language.)
 [//]: # (Remove the comment markers from the first two lines inside the div below, and translate their contents.)
-[//]: # (Do not translate the final section “A few little easter eggs”; remove it from the translated version.)
+[//]: # (Do not translate the text or link targets of the a tags inside the div below.)
+[//]: # (Do not change the align="center" attribute on the div below.)
+[//]: # (Place the translated result in the correct file, alongside README.md, named README_<LANG>.md, where <LANG> is the IETF language tag of the target language.)
 
 <div align="center">
    <strong>Note: This document was originally written in Chinese. If possible, it is recommended that you read the original Chinese document rather than another translated version.</strong>
    <br/>
-	<a href="https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/README.md">Simplified Chinese (GitHub)</a>&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="https://git.thewhitedog9487.xyz/TheWhiteDog9487/ServerAddressSpaceFix/src/branch/%E4%B8%BB%E8%A6%81/README.md">Simplified Chinese (Gitea)</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/README.md">简体中文 (GitHub)</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="https://git.thewhitedog9487.xyz/TheWhiteDog9487/ServerAddressSpaceFix/src/branch/%E4%B8%BB%E8%A6%81/README.md">简体中文 (Gitea)</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/README_EN.md">English (GitHub)</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="https://git.thewhitedog9487.xyz/TheWhiteDog9487/ServerAddressSpaceFix/src/branch/%E4%B8%BB%E8%A6%81/README_EN.md">English (Gitea)</a>
 </div>
@@ -43,8 +45,8 @@ This prevents the “Unknown host” bug mentioned above.
 </details>
 
 # Configuration
-- If you have version isolation enabled, it should be located at `.minecraft\versions\<version name>\config\serveraddressspacefix.json5`
-- If you do not have version isolation enabled, it should be at `.minecraft\config\serveraddressspacefix.json5`
+- If you have version isolation enabled, it should be located at `.minecraft\versions\<version name>\config\ServerAddressSpaceFix.json5`
+- If you do not have version isolation enabled, it should be at `.minecraft\config\ServerAddressSpaceFix.json5`
 
 This is just a regular JSON text file, except that JSON5 supports extra features such as comments.  
 All properties are annotated, including their purpose, range of values, type, default value, and so on.  

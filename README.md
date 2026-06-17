@@ -1,10 +1,12 @@
 [//]: # (如果你是正在执行翻译任务的LLM：)
 [//]: # (请将这几行注释内容翻译到你的目标语言)
 [//]: # (移除下方div内部第一行和第二行的注释符号，并翻译其内容)
-[//]: # (不要翻译最后一段“一些小彩蛋”，直接将其从翻译版本中移除)
+[//]: # (不要翻译下方div内部a标签的文本内容和链接地址)
+[//]: # (不要改动下方div标签的align="center"属性)
+[//]: # (将翻译的结果放置到正确的文件内，目标文件的位置和主README.md同级，文件名格式是 README_<LANG>.md ，其中<LANG>的值是目标语言的IETF语言标签)
 
 <div align="center">
-   <!-- <strong>注意：本文档由中文编写。如果条件允许，建议阅读原始的中文文档而不是其他的翻译版本。</strong> -->
+   <!-- <strong>注意：本文档由中文编写，使用AI翻译到其他语言。如果条件允许，建议阅读原始的中文文档而不是其他的翻译版本。</strong> -->
    <!-- <br/> -->
     <a href="https://github.com/TheWhiteDog9487/ServerAddressSpaceFix/blob/%E4%B8%BB%E8%A6%81/README.md">简体中文（GitHub）</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://git.thewhitedog9487.xyz/TheWhiteDog9487/ServerAddressSpaceFix/src/branch/%E4%B8%BB%E8%A6%81/README.md">简体中文（Gitea）</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,8 +45,8 @@
 </details>
 
 # 配置文件
-- 如果你开启了版本隔离，它应当位于`.minecraft\versions\<版本名>\config\serveraddressspacefix.json5`
-- 如果没有版本隔离，它应该在`.minecraft\config\serveraddressspacefix.json5`
+- 如果你开启了版本隔离，它应当位于`.minecraft\versions\<版本名>\config\ServerAddressSpaceFix.json5`
+- 如果没有版本隔离，它应该在`.minecraft\config\ServerAddressSpaceFix.json5`
 
 这就是一个普通的json文本文件，只不过json5支持诸如注释等更多特性而已。  
 所有的属性都有注释，包括功能、取值范围、类型、默认值等。  

@@ -1,3 +1,10 @@
+# 0.2.4
+时间：2026 06 17
+1. 修复未安装YACL会导致游戏出现`NoClassDefFoundError`崩溃的问题
+2. 将配置文件名从`serveraddressspacefix.json5`改为`ServerAddressSpaceFix.json5`
+3. 为配置文件添加版本号
+4. 更改Logger名称
+
 # 0.2.3
 时间：2026 06 04
 1. 使用YACL Config API自动将功能开关状态保存到文件内

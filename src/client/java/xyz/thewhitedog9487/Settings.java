@@ -18,22 +18,28 @@ import java.nio.file.WatchService;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
-import static xyz.thewhitedog9487.ServerAddressSpaceFixClient.ModID;
-import static xyz.thewhitedog9487.ServerAddressSpaceFixClient.ModLogger;
+import static xyz.thewhitedog9487.ServerAddressSpaceFixClient.*;
 
 public class Settings {
     public static Path ConfigFilePath = FabricLoader.getInstance()
             .getConfigDir()
-            .resolve(ModID + ".json5")
+            .resolve(FriendlyModID + ".json5")
             .toAbsolutePath();
-    public static ConfigClassHandler<Settings> SettingsHandler = ConfigClassHandler.createBuilder(Settings.class)
-            .id(Identifier.fromNamespaceAndPath(ModID, "settings_confighandler"))
-            .serializer(SettingsConfigClassHandler -> GsonConfigSerializerBuilder.create(SettingsConfigClassHandler)
-                .setPath(ConfigFilePath)
-                .appendGsonBuilder(GsonBuilder::setPrettyPrinting)
-                .setJson5(true)
-                .build() )
-            .build();
+    public static ConfigClassHandler<Settings> SettingsHandler = null;
+    public static long CurrentConfigurationVersionCode = 0;
+
+    static {
+        try {
+            SettingsHandler = ConfigClassHandler.createBuilder(Settings.class)
+                    .id(Identifier.fromNamespaceAndPath(ModID, "settings_confighandler"))
+                    .serializer(SettingsConfigClassHandler -> GsonConfigSerializerBuilder.create(SettingsConfigClassHandler)
+                            .setPath(ConfigFilePath)
+                            .appendGsonBuilder(GsonBuilder::setPrettyPrinting)
+                            .setJson5(true)
+                            .build() )
+                    .build();
+        } catch (NoClassDefFoundError _) {} }
+
     public static volatile Settings SettingsInstance;
 
 //    region 配置文件变更监听器
@@ -59,12 +65,23 @@ public class Settings {
                        SettingsInstance = SettingsHandler.instance();
                        ModLogger.info("检测到配置文件变更，已重新加载设置。");}
                     if (!WatchKey.reset()) {
-                        break;}}
+                        break; } }
             } catch (InterruptedException InterruptedException) {
                 Thread.currentThread().interrupt();
             } catch (IOException e) {
                 throw new RuntimeException(e); } } ) ); }
 //    endregion
+
+    @SerialEntry(comment =
+        """
+        配置文件版本号
+        用于在配置文件结构发生变化且需要手动干预时进行兼容性处理
+        非必要情况下你不应该手动修改这个数据，否则可能导致本Mod的配置文件出现损坏或其他问题
+        类型：整数
+        取值范围：0 ~ Long.MAX_VALUE
+        当前值：0
+        """)
+    public long ConfigurationVersionCode = CurrentConfigurationVersionCode;
 
     @SerialEntry(comment =
         """

@@ -1,3 +1,5 @@
+import java.nio.file.Paths
+
 plugins {
     id("net.fabricmc.fabric-loom")
     `maven-publish`
@@ -21,6 +23,27 @@ repositories {
     maven {
         name = "Nucleoid"
         url = uri("https://maven.nucleoid.xyz/") } }
+
+afterEvaluate {
+    val MixinJarPath = configurations.loaderLibraries.get().resolvedConfiguration
+        .resolvedArtifacts
+        .find { it.moduleVersion.id.group == "net.fabricmc" && it.moduleVersion.id.name == "sponge-mixin" }!!
+        .file
+    val IsSupportDceVM = Paths.get(System.getProperty("java.home"))
+        .resolve("bin")
+        .resolve("java")
+        .toFile()
+        .let {
+            val ReturnCode = ProcessBuilder(it.absolutePath, "-XX:+AllowEnhancedClassRedefinition", "-version")
+                .start()
+                .waitFor()
+            return@let ReturnCode == 0 }
+    loom.runs.named("client") {
+        jvmArguments.add("-javaagent:${MixinJarPath.absolutePath}")
+        if (IsSupportDceVM == true) jvmArguments.add("-XX:+AllowEnhancedClassRedefinition") }
+    loom.runs.named("server") {
+        jvmArguments.add("-javaagent:${MixinJarPath.absolutePath}")
+        if (IsSupportDceVM == true) jvmArguments.add("-XX:+AllowEnhancedClassRedefinition") } }
 
 loom {
     splitEnvironmentSourceSets()
